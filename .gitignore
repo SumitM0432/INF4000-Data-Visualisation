@@ -1,3 +1,11 @@
+/Data
+/.DS_Store
+/1_Datasets/
+*.rds
+*.db
+*.csv
+*.sql
+
 # History files
 .Rhistory
 .Rapp.history
