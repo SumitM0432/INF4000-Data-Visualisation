@@ -2,7 +2,6 @@
 /.DS_Store
 *.rds
 *.db
-*.csv
 *.sql
 
 # History files
