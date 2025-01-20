@@ -12,21 +12,8 @@ library("data.table")
 if (!requireNamespace("tidyverse")) install.packages("tidyverse")
 library("tidyverse")
 
-if (!requireNamespace("tidytext")) install.packages("tidytext")
-library("tidytext")
+if (!requireNamespace("treemap")) install.packages("treemap")
+library("treemap")
 
-if (!requireNamespace("stopwords")) install.packages("stopwords")
-library("stopwords")
-
-if (!requireNamespace("syuzhet")) install.packages("syuzhet")
-library("syuzhet")
-
-# Libraries for Model Training, Prediction and Evaluation
-if (!requireNamespace("tidymodels")) install.packages("tidymodels")
-library("tidymodels")
-
-if (!requireNamespace("caret")) install.packages("caret")
-library("caret")
-
-if (!requireNamespace("xgboost")) install.packages("xgboost")
-library("xgboost")
+if (!requireNamespace("ggalt")) install.packages("ggalt")
+library("ggalt")

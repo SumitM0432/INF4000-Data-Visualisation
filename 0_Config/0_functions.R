@@ -4,40 +4,11 @@ folder_creation_check = function() {
   
   # Creating the Results Folder to save the plots for results
   if (!dir.exists("../2_Outputs/Plots/Results")){
-    dir.create("../2_Outputs/Plots/Results/With Lyrics", recursive = TRUE)
-    dir.create("../2_Outputs/Plots/Results/Without Lyrics", recursive = TRUE)
+    dir.create("../2_Outputs/Plots/Results", recursive = TRUE)
     
     print("Results Directory Created!")
   }else{
     print("Results Directory Exist!")
-  }
-  
-  # Creating the EDA Folder
-  if (!dir.exists("../2_Outputs/Plots/EDA")){
-    dir.create("../2_Outputs/Plots/EDA", recursive = TRUE)
-    
-    print("EDA Directory Created!")
-  }else{
-    print("EDA Directory Exist!")
-  }
-  
-  # Creating the Trained Model Folder
-  if (!dir.exists("../2_Outputs/Trained_Models")){
-    dir.create("../2_Outputs/Trained_Models/With Lyrics", recursive = TRUE)
-    dir.create("../2_Outputs/Trained_Models/Without Lyrics", recursive = TRUE)
-    
-    print("Trained Model Directory Created!")
-  }else{
-    print("Trained Model Directory Exist!")
-  }
-  
-  # Creating the Trained Model Folder
-  if (!dir.exists("../2_Outputs/RData")){
-    dir.create("../2_Outputs/RData", recursive = TRUE)
-    
-    print("RData Directory Created!")
-  }else{
-    print("RData Directory Exist!")
   }
 }
 
@@ -124,8 +95,10 @@ pred_vs_actual_plot = function(results_data, model_name) {
     theme_minimal() +
     theme(text = element_text(family = 'mono'),
           plot.title = element_text(hjust = 0.5, , size = 15, face = 'bold'),
-          axis.text.x = element_text(size = 10, face = 'bold'),
-          axis.text.y = element_text(size = 10, face = 'bold'))
+          axis.text.x = element_text(size = 15, face = 'bold'),
+          axis.text.y = element_text(size = 15, face = 'bold'),
+          axis.title.x = element_text(size = 13, face = 'bold'),
+          axis.title.y = element_text(size = 13, face = 'bold'))
   
   # Plotting
   plot(pred_v_act)
@@ -153,8 +126,10 @@ residual_plot = function(results_data, model_name) {
     theme_minimal() +
     theme(text = element_text(family = 'mono'),
           plot.title = element_text(hjust = 0.5, , size = 15, face = 'bold'),
-          axis.text.x = element_text(size = 10, face = 'bold'),
-          axis.text.y = element_text(size = 10, face = 'bold'))
+          axis.text.x = element_text(size = 15, face = 'bold'),
+          axis.text.y = element_text(size = 15, face = 'bold'),
+          axis.title.x = element_text(size = 13, face = 'bold'),
+          axis.title.y = element_text(size = 13, face = 'bold'))
   
   # Plotting
   plot(res_plot)
@@ -177,8 +152,10 @@ feature_importance_plot = function(feature_importance_df, model_name_title, impo
     theme_minimal() +
     theme(text = element_text(family = 'mono'),
           plot.title = element_text(hjust = 0.5, , size = 15, face = 'bold'),
-          axis.text.x = element_text(size = 10, face = 'bold'),
-          axis.text.y = element_text(size = 10, face = 'bold'))
+          axis.text.x = element_text(size = 13, face = 'bold'),
+          axis.text.y = element_text(size = 13, face = 'bold'),
+          axis.title.x = element_text(size = 13, face = 'bold'),
+          axis.title.y = element_text(size = 13, face = 'bold'))
   
   # Plotting
   plot(feature_imp_plot)
