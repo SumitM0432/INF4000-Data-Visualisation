@@ -14,7 +14,7 @@ data_load_type = 'CSV' # Choosing how to ingest the data 'SQL' or 'CSV'
 if (data_load_type == 'SQL') {
   # Username and Password for SQL Server
   username_sql = 'root'
-  password_sql = 'qwe123@A@A' # Change the empty string to the password for your MySQL server
+  password_sql = '' # Change the empty string to the password for your MySQL server
 }
 
 print(paste(Sys.time(), ' :: INGESTING LIBRARIES AND FUNCTIONS'))

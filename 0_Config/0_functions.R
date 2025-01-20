@@ -35,25 +35,3 @@ extract_artist = function(val) {
   
   return (id_vector)
 }
-
-get_artist_features = function (artist_ids_list, df_meta_artists = df_meta_artists) {
-  # Description : This function extract and aggregate the features of artists from df_meta_artist
-  #               Features aggregated are followers, popularity, main genres and number of artists
-  
-  # Getting the artist ids as a list
-  artist_ids_list = unlist(artist_ids_list)
-  
-  artist_info = df_meta_artists %>%
-    # Filtering for the artist ids in the questions
-    filter(artist_id %in% artist_ids_list) %>%
-    # Summarizing and extracting the required features
-    summarise(
-      total_followers = sum(followers, na.rm = TRUE),
-      avg_popularity = mean(popularity, na.rm = TRUE),
-      unique_main_genre = n_distinct(main_genre, na.rm = TRUE),
-      unique_diff_artist = n_distinct(artist_type, na.rm = TRUE)
-    )
-  
-  # Returning all the features engineered
-  return (as.list(artist_info))
-}

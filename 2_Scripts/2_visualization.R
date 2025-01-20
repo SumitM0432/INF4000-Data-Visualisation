@@ -121,7 +121,7 @@ ggsave(paste0("../3_Outputs/Plots/plot_2.jpeg"), plot_2)
 print(paste(Sys.time(), ' :: 3rd Treemap : Top Artist Genre and average popularity'))
 # Third Visual
 
-# cleaning the dat and aggregating to extract the top genres
+# cleaning the data and aggregating to extract the top genres
 df_treemap = df_all %>%
   filter(!is.na(main_genre), main_genre != "not given") %>%
   group_by(main_genre) %>%
@@ -132,6 +132,8 @@ df_treemap = df_all %>%
   arrange(desc(count)) %>%
   # Extracting only the top 50 genres to reduce the clutter
   mutate(main_genre = ifelse(row_number() >= 50, "Others", main_genre)) %>%
+  # Changing to title case for the visual
+  mutate(main_genre = str_to_title(main_genre)) %>%
   group_by(main_genre) %>%
   summarise(
     count = sum(count),
